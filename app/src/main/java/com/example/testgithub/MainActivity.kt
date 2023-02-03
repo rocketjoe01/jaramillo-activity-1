@@ -13,8 +13,9 @@ import com.example.testgithub.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
+    prigitvate lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
