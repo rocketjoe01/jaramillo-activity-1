@@ -1,3 +1,5 @@
+import kotlin.io.readLine as readLine
+
 fun main() {
     val student1 = "Vic Recopuerto Amable"
     val student2 = "John Chris Bolanio"
@@ -25,13 +27,13 @@ fun main() {
     println("[Enter number to select a student]")
 
     while (true) {
-        val studentNumber = readLine()!!.toInt()
+        val studentNumber = readln()!!.toInt()
         if (studentNumber == -1) {
             break
         } else if (studentNumber >= 0 && studentNumber < students.size) {
             val student = students[studentNumber]
             print("Type 'pass' or 'fail' to update $student progress:")
-            val result = readLine()!!.toUpperCase()
+            val result = readln()!!.toUpperCase()
             if (result == "PASS") {
                 println("$student PASSED. Note: Congratulations for passing the Activity!")
             } else if (result == "FAIL") {
