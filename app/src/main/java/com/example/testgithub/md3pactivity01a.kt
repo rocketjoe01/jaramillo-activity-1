@@ -1,4 +1,3 @@
-import kotlin.io.readLine as readLine
 
 fun main() {
     val student1 = "Vic Recopuerto Amable"
@@ -14,7 +13,7 @@ fun main() {
 
     val students = listOf(student1, student2, student3, student4, student5, student6, student7, student8, student9, student0)
 
-    println("Enter student number to update result: ('WARNING! Letters only!')")
+    println("Enter student number to update result:")
     println("")
     println("")
     println("CLASS OF MD3P")
