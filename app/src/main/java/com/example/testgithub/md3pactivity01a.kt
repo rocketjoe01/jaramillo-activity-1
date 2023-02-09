@@ -1,4 +1,3 @@
-
 fun main() {
     val student1 = "Vic Recopuerto Amable"
     val student2 = "John Chris Bolanio"
@@ -11,7 +10,7 @@ fun main() {
     val student9 = "Ryan Malacao"
     val student0 = "Gretchen Roque"
 
-    val students = listOf(student1, student2, student3, student4, student5, student6, student7, student8, student9, student0)
+    val students = mutableListOf(student1, student2, student3, student4, student5, student6, student7, student8, student9, student0)
 
     println("Enter student number to update result:")
     println("")
@@ -23,7 +22,7 @@ fun main() {
     }
     println("-1 - Exit")
     println("")
-    println("[Enter number to select a student]")
+    println("[Enter number to select a Student] 'Numbers Only!'")
 
     while (true) {
         val studentNumber = readln()!!.toInt()
@@ -35,10 +34,19 @@ fun main() {
             val result = readln()!!.toUpperCase()
             if (result == "PASS") {
                 println("$student PASSED. Note: Congratulations for passing the Activity!")
+                students[studentNumber] = "$student (PASSED)"
             } else if (result == "FAIL") {
                 println("$student FAILED. Note: Try harder for the next Activity!")
+                students[studentNumber] = "$student (FAILED)"
             } else {
                 println("Invalid input.")
+            }
+            println("")
+            println("Updated Student list:")
+            println("Note: Enter another number again!")
+            println("")
+            for (i in 0 until students.size) {
+                println("$i - ${students[i]}")
             }
         } else {
             println("Invalid student number.")
