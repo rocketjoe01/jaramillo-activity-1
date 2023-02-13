@@ -25,21 +25,24 @@ fun main() {
     println("[Enter number to select a Student] 'Numbers Only!'")
 
     while (true) {
-        val studentNumber = readln()!!.toInt()
+        val studentNumber = readln().toInt()
         if (studentNumber == -1) {
             break
         } else if (studentNumber >= 0 && studentNumber < students.size) {
             val student = students[studentNumber]
             print("Type 'pass' or 'fail' to update $student progress:")
-            val result = readln()!!.toUpperCase()
-            if (result == "PASS") {
-                println("$student PASSED. Note: Congratulations for passing the Activity!")
-                students[studentNumber] = "$student (PASSED)"
-            } else if (result == "FAIL") {
-                println("$student FAILED. Note: Try harder for the next Activity!")
-                students[studentNumber] = "$student (FAILED)"
-            } else {
-                println("Invalid input.")
+            when (readln().uppercase()) {
+                "PASS" -> {
+                    println("$student PASSED. Note: Congratulations for passing the Activity!")
+                    students[studentNumber] = "$student (PASSED)"
+                }
+                "FAIL" -> {
+                    println("$student FAILED. Note: Try harder for the next Activity!")
+                    students[studentNumber] = "$student (FAILED)"
+                }
+                else -> {
+                    println("Invalid input.")
+                }
             }
             println("")
             println("Updated Student list:")
