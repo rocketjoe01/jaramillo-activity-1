@@ -16,9 +16,9 @@ fun main() {
 
     while (true) {
         println("")
-        println("")
-        println("[L = Show the list of books in the library] \n[B = Borrow a book] \n[R = Return a book] \n[Q = Quit the program]")
-        println("")
+        println(" ___________________________________________")
+        println("|[L = Show the list of books in the library]| \n|[B = Borrow a book]                        | \n|[R = Return a book]                        | \n|[Q = Quit the program]                     |")
+        println(" ___________________________________________")
         println("")
         when (readln().uppercase()) {
             "L" -> {
@@ -36,7 +36,7 @@ fun main() {
                 } else {
                     if (selectedBook.available) {
                         selectedBook.available = false
-                        println("You have borrowed ${selectedBook.title}. It is now unavailable.")
+                        println("You have borrowed '${selectedBook.title}.' It is now unavailable.")
                         println("Author: ${selectedBook.author}")
                         println("Description: ${selectedBook.description}")
                     } else {
@@ -52,7 +52,7 @@ fun main() {
                 } else {
                     if (!selectedBook.available) {
                         selectedBook.available = true
-                        println("You have returned ${selectedBook.title}. It is now available.")
+                        println("You have returned '${selectedBook.title}.' It is now available.")
                     } else {
                         println("This book is not borrowed, it is already available.")
                     }
