@@ -24,7 +24,7 @@ fun main() {
             "L" -> {
                 println("Here is a list of our books:")
                 books.forEach { (key, book) ->
-                    val availability = if (book.available) "Available" else "Unavailable"
+                    val availability = if (book.available) "[Available]" else "[Unavailable]"
                     println("$key. ${book.title} - $availability")
                 }
             }
@@ -50,7 +50,7 @@ fun main() {
                 if (selectedBook == null) {
                     println("Sorry, we don't have that book.")
                 } else {
-                    if (!selectedBook.available) {
+                    if (selectedBook.available) {
                         selectedBook.available = true
                         println("You have returned '${selectedBook.title}.' It is now available.")
                     } else {
