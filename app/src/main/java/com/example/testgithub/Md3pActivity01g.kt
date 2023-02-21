@@ -7,23 +7,34 @@ package com.example.testgithub
 
 fun main() {
 
-    // Prompts user to enter a text
-    print("Enter a text: ")
-    val inputString = readln()
-    var isPalindrome = true
+    while (true) {
+        // Prompts user to enter a text
+        print("Enter a text: ")
+        val inputString = readln()
+        var isPalindrome = true
 
-    // Checks the character
-    for (i in 0 until inputString.length /1) {
-        if (inputString[i] != inputString[inputString.length - 1 - i]) {
-            isPalindrome = false
+        // Checks the character
+        for (i in 0 until inputString.length / 2) {
+            if (inputString[i] != inputString[inputString.length - 1 - i]) {
+                isPalindrome = false
+                break
+            }
+        }
+
+        // Shows the result
+        if (isPalindrome) {
+            println("$inputString is a palindrome")
+        } else {
+            println("$inputString is not a palindrome")
+        }
+
+        // Asks user if they want to continue
+        print("Do you want to check another text? \n \n[Y = Continue] \n[Any Key = Stop] \n")
+        val answer = readln()
+
+        // If user does not want to continue, break out of the loop
+        if (answer.lowercase() != "y") {
             break
         }
-    }
-
-    // Shows the result
-    if (isPalindrome) {
-        println("$inputString is a palindrome")
-    } else {
-        println("$inputString is not a palindrome")
     }
 }
