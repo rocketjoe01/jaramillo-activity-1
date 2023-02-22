@@ -10,7 +10,7 @@ fun main() {
     while (true) {
         // Prompts user to enter a text
         print("Enter a text: ")
-        val inputString = readln()
+        val inputString = readln().uppercase()
         var isPalindrome = true
 
         // Checks the character
