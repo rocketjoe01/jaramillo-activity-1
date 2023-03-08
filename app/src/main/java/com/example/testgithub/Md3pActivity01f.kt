@@ -11,14 +11,14 @@ fun main() {
     // Prompts user to enter a text
     while (uniqueChars) {
         print("Enter first string: ")
-        val str1 = readln()
+        val str1 = readln().lowercase()
         print("Enter second string: ")
-        val str2 = readln()
+        val str2 = readln().lowercase()
 
         val unique = StringBuilder()
 
     // Check the unique character
-        for (ch in str1 + str2) {git
+        for (ch in str1 + str2) {
             if (!unique.contains(ch)) {
                 unique.append(ch)
             }
